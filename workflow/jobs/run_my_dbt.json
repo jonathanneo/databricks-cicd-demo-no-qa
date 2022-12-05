@@ -1,0 +1,36 @@
+{
+    "name": "run_my_dbt",
+    "email_notifications": {
+        "no_alert_for_skipped_runs": false
+    },
+    "timeout_seconds": 0,
+    "max_concurrent_runs": 1,
+    "tasks": [
+        {
+            "task_key": "run_my_dbt",
+            "dbt_task": {
+                "project_directory": "my_dbt",
+                "commands": [
+                    "dbt run"
+                ],
+                "profiles_directory": ""
+            },
+            "existing_cluster_id": "1016-121245-wj53bgj1",
+            "libraries": [
+                {
+                    "pypi": {
+                        "package": "dbt-databricks>=1.0.0,<2.0.0"
+                    }
+                }
+            ],
+            "timeout_seconds": 0,
+            "email_notifications": {}
+        }
+    ],
+    "git_source": {
+        "git_url": "https://dev.azure.com/jonathanneo/_git/MyProject",
+        "git_provider": "azureDevOpsServices",
+        "git_branch": "master"
+    },
+    "format": "MULTI_TASK"
+}
